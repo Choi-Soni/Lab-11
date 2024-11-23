@@ -1,6 +1,6 @@
 №1
 def is_palindrome(s):
-    s = s.replace(" ", "").lower()  # Remove spaces and convert to lowercase
+    s = s.replace(" ", "").lower()  
     return s == s[::-1]
 
 string = input("Enter a string: ")
@@ -31,15 +31,17 @@ print("List:", lst)
 print("Tuple:", tpl)
 
 №4
-def print_first_and_last(lst):
-    if len(lst) > 0:
-        print("First item:", lst[0])
-        print("Last item:", lst[-1])
-    else:
-        print("The list is empty.")
+def print_first_and_last():
+    user_input = input("Введите элементы списка, разделенные запятой: ")
+    lst = [item.strip() for item in user_input.split(",")]
 
-example_list = [1, 2, 3, 4, 5]
-print_first_and_last(example_list)
+    if len(lst) > 0:  
+        print("Первый элемент:", lst[0])
+        print("Последний элемент:", lst[-1])
+    else:
+        print("Список пуст.")
+
+print_first_and_last()
 
 №5
 def get_file_extension(filename):
