@@ -1,0 +1,49 @@
+№1
+list1 = list(map(int, input("Enter elements of the first list separated by space: ").split()))
+list2 = list(map(int, input("Enter elements of the second list separated by space: ").split()))
+
+result = [x for x in list1 if x not in list2]
+print("Elements in the first list but not in the second:", result)
+
+№2
+import os
+
+directory = input("Enter the directory path: ")
+if os.path.isdir(directory):
+    files = [file for file in os.listdir(directory) if os.path.isfile(os.path.join(directory, file))]
+    print("Files in the directory:", files)
+else:
+    print("Invalid directory path.")
+
+№3
+number = int(input("Enter an integer: "))
+digit_sum = sum(int(digit) for digit in str(abs(number)))
+print("Sum of the digits:", digit_sum)
+
+№4
+string = input("Enter a string: ")
+character = input("Enter the character to count: ")
+
+count = string.count(character)
+print(f"The character '{character}' appears {count} times in the string.")
+
+№5
+a = input("Enter the first value: ")
+b = input("Enter the second value: ")
+
+a, b = b, a
+print("After swapping: a =", a, ", b =", b)
+
+№6
+numbers = list(map(int, input("Enter a list of numbers separated by space: ").split()))
+
+divisible_by_15 = list(filter(lambda x: x % 15 == 0, numbers))
+print("Numbers divisible by 15:", divisible_by_15)
+
+№7
+sequence = list(map(int, input("Enter a sequence of numbers separated by space: ").split()))
+
+if len(sequence) == len(set(sequence)):
+    print("All numbers are unique.")
+else:
+    print("There are duplicate numbers.")
