@@ -1,0 +1,79 @@
+№1
+def is_palindrome(s):
+    s = s.replace(" ", "").lower()  # Remove spaces and convert to lowercase
+    return s == s[::-1]
+
+string = input("Enter a string: ")
+print("Palindrome" if is_palindrome(string) else "Not a palindrome")
+
+№2
+def format_time(seconds):
+    days = seconds // (24 * 3600)
+    seconds %= (24 * 3600)
+    hours = seconds // 3600
+    seconds %= 3600
+    minutes = seconds // 60
+    seconds %= 60
+    return f"{days}:{hours:02}:{minutes:02}:{seconds:02}"
+
+total_seconds = int(input("Enter the number of seconds: "))
+print(format_time(total_seconds))
+
+№3
+def create_list_and_tuple():
+    numbers = input("Enter a sequence of numbers separated by commas: ")
+    number_list = [int(num.strip()) for num in numbers.split(",")]
+    number_tuple = tuple(number_list)
+    return number_list, number_tuple
+
+lst, tpl = create_list_and_tuple()
+print("List:", lst)
+print("Tuple:", tpl)
+
+№4
+def print_first_and_last(lst):
+    if len(lst) > 0:
+        print("First item:", lst[0])
+        print("Last item:", lst[-1])
+    else:
+        print("The list is empty.")
+
+example_list = [1, 2, 3, 4, 5]
+print_first_and_last(example_list)
+
+№5
+def get_file_extension(filename):
+    try:
+        extension = filename.split(".")[-1]
+        if extension == filename:
+            raise ValueError("No extension found")
+        return extension
+    except ValueError as e:
+        return str(e)
+
+file_name = input("Enter the file name: ")
+print("File extension:", get_file_extension(file_name))
+
+№6
+def compute_nnn_sum(n):
+    nn = int(str(n) * 2)
+    nnn = int(str(n) * 3)
+    return n + nn + nnn
+
+number = int(input("Enter an integer: "))
+print("Sum of n + nn + nnn:", compute_nnn_sum(number))
+
+№7
+def output_even_until_237():
+    numbers = input("Введите числа, разделенные пробелами: ")
+    numbers = [int(num) for num in numbers.split()]
+    
+    for num in numbers:
+        if num == 237:
+            break
+        if num % 2 == 0:  
+            print(num, end=" ")  
+
+output_even_until_237()
+
+
